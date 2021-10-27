@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec {{ joinPath .chezmoi.sourceDir "scripts/install.{{ .chezmoi.os }}.sh" | quote }}
