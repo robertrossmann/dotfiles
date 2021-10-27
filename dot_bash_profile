@@ -25,3 +25,7 @@ PS1+="\$(pssymbol) "            # Success/failure indicator
 PS1+="\[$RESET\][\W]"           # Current working directory
 PS1+="\[$RESET\]\$(__git_ps1)"  # Current git branch (if any)
 PS1+="\[$YELLOW\]  \[$RESET\]" # Ending prompt character
+
+if [ -n "${SSH_CLIENT+1}" ]; then
+  PS1="歷 ${PS1}"
+fi
