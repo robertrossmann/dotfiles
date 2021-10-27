@@ -1,8 +1,0 @@
-#!/bin/bash
-
-ROOT="$1"
-
-# shellcheck source=shell/aliases.sh
-source "${ROOT}/shell/aliases.sh" "${ROOT}"
-# shellcheck source=shell/environment.sh
-source "${ROOT}/shell/environment.sh" "${ROOT}"
