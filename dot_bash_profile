@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+SCRIPTS="${HOME}/.shell"
+
+# shellcheck source=dot_shell/common/env.sh
+source "${SCRIPTS}/common/env.sh"
+# shellcheck source=dot_shell/common/colours.sh
+source "${SCRIPTS}/common/colours.sh"
+# shellcheck source=dot_shell/common/aliases.sh
+source "${SCRIPTS}/common/aliases.sh"
+
+function pssymbol() {
+  retcode=$?
+  if [[ $retcode == 0 ]]; then
+    echo "\[${GREEN}\]"
+  else
+    echo "\[${RED}\]"
+  fi
+}
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+PS1=""
+PS1+="\$(pssymbol) "            # Success/failure indicator
+PS1+="\[$RESET\][\W]"           # Current working directory
+PS1+="\[$RESET\]\$(__git_ps1)"  # Current git branch (if any)
+PS1+="\[$YELLOW\]  \[$RESET\]" # Ending prompt character
