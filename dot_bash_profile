@@ -12,9 +12,9 @@ source "${SCRIPTS}/common/aliases.sh"
 function pssymbol() {
   retcode=$?
   if [[ $retcode == 0 ]]; then
-    echo "\[${GREEN}\]"
+    echo "${GREEN}"
   else
-    echo "\[${RED}\]"
+    echo "${RED}"
   fi
 }
 
