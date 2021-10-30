@@ -22,8 +22,8 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 PS1=""
 PS1+="\$(pssymbol) "            # Success/failure indicator
-PS1+="\[$BASE\][\W]"            # Current working directory
-PS1+="\[$BASE\]\$(__git_ps1)"   # Current git branch (if any)
+PS1+="\[$WHITE\][\W]"           # Current working directory
+PS1+="\[$YELLOW\]\$(__git_ps1)" # Current git branch (if any)
 PS1+="\[$YELLOW\]   \[$BASE\]" # Ending prompt character
 
 if [ -n "${SSH_CLIENT+1}" ]; then
